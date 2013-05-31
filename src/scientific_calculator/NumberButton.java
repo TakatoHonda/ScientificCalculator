@@ -22,7 +22,7 @@ public class NumberButton extends JButton implements MouseListener {
 
 	public void mouseClicked(MouseEvent e) {
 		System.out.println("NumberButton!");
-		display_area.SetDisplayCotent("" + display);
+		display_area.SetDisplayContent("" + display);
 	}
 
 	public void mouseEntered(MouseEvent e) {}
