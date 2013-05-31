@@ -1,6 +1,10 @@
 package scientific_calculator;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
+
+import button.RemoveButton;
 
 @SuppressWarnings("serial")
 public class Calculator extends JFrame{
@@ -10,7 +14,7 @@ public class Calculator extends JFrame{
 
 	private NumberButton[] numberButton;
 	private NumberButton piButton;
-	private NumberButton naturalButton;
+	private NumberButton napierButton;
 
 	private OperateButton plusButton;
 	private OperateButton squareRootButton;
@@ -31,9 +35,10 @@ public class Calculator extends JFrame{
 	private OperateButton leftBracketButton;
 	private OperateButton rightBracketButton;
 	private OperateButton radixPointButton;
-	private OperateButton negativeButton;
+	private OperateButton deleteButton;
 	private ClearButton clearButton;
 	private EqualButton equalButton;
+	private RemoveButton removeButton;
 
 	public static void main(String[] args){
 		Calculator calculator = new Calculator();
@@ -49,12 +54,12 @@ public class Calculator extends JFrame{
 		displayArea = new DisplayArea();
 		numberButton = new NumberButton[10];
 		for (int i = 0; i < 10; i++){
-			numberButton[i] = new NumberButton("" + i, i, displayArea);
+			numberButton[i] = new NumberButton(""+i, displayArea);
 			add(numberButton[i]);
 		}
-		piButton = new NumberButton("π", Math.PI, displayArea);
-		naturalButton = new NumberButton("e", Math.E, displayArea);
-		clearButton = new ClearButton("C");
+		piButton = new NumberButton("π", displayArea);
+		napierButton = new NumberButton("e", displayArea);
+		clearButton = new ClearButton(displayArea);
 		// new arithmeticUnit
 		arithmeticUnit = new ArithmeticUnit(displayArea);
 		equalButton = new EqualButton("=", arithmeticUnit);
@@ -64,11 +69,12 @@ public class Calculator extends JFrame{
 		divideButton = new OperateButton("/", displayArea);
 		
 		factorialButton = new OperateButton("!", displayArea);
-		logarithmsButton = new OperateButton("log", displayArea);
+		logarithmsButton = new OperateButton("Log", displayArea);
 		logarithmsNaturalButton = new OperateButton("ln", displayArea);
-		sinButton = new OperateButton("sin", displayArea);
-		cosButton = new OperateButton("cos", displayArea);
-		tanButton = new OperateButton("tan", displayArea);
+		sinButton = new OperateButton("Sin", displayArea);
+		cosButton = new OperateButton("Cos", displayArea);
+		tanButton = new OperateButton("Tan", displayArea);
+		
 		squareButton = new OperateButton("x²", displayArea);
 		cubeButton = new OperateButton("x³", displayArea);
 		nTimesPowerButton = new OperateButton("xⁿ", displayArea);
@@ -78,7 +84,7 @@ public class Calculator extends JFrame{
 		leftBracketButton = new OperateButton("(", displayArea);
 		rightBracketButton = new OperateButton(")", displayArea);
 		radixPointButton = new OperateButton(".", displayArea);
-		negativeButton = new OperateButton("-", displayArea);
+		removeButton = new RemoveButton(displayArea);
 		
 	}
 
@@ -87,6 +93,7 @@ public class Calculator extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(600, 370);
 		setLocation(100, 100);
+		setBackground(Color.magenta);
 		setLayout(null);
 
 		// new and add DisplayArea.
@@ -107,8 +114,8 @@ public class Calculator extends JFrame{
 		// new and add NumberButtons. pi and e
 		piButton.setBounds(190, 220, 60, 60);
 		add(piButton);
-		naturalButton.setBounds(190, 280, 60, 60);
-		add(naturalButton);
+		napierButton.setBounds(190, 280, 60, 60);
+		add(napierButton);
 
 		// new and add ClearButton.
 		clearButton.setBounds(530, 160, 60, 60);
@@ -176,8 +183,8 @@ public class Calculator extends JFrame{
 		radixPointButton.setBounds(470, 280, 60, 60);
 		add(radixPointButton);
 
-		negativeButton.setBounds(530, 100, 60, 60);
-		add(negativeButton);
+		removeButton.setBounds(530, 100, 60, 60);
+		add(removeButton);
 
 	}
 

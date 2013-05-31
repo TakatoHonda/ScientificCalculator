@@ -1,25 +1,24 @@
-package scientific_calculator;
+package button;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
-@SuppressWarnings("serial")
-public class NumberButton extends JButton implements MouseListener {
-	
-	private String value;
+import scientific_calculator.DisplayArea;
+
+public class RemoveButton extends JButton implements MouseListener{
 	private DisplayArea displayArea;
-	
-	NumberButton(String value, DisplayArea displayArea) {
-		setText(value);
-		this.value = value;
+	public RemoveButton(DisplayArea displayArea){
+		setText("Å©");
+		//setOpaque(false);
 		this.displayArea = displayArea;
 		addMouseListener(this);
 	}
-
+	
+	
 	public void mouseClicked(MouseEvent e) {
-		displayArea.addDisplayContent(value);
+		displayArea.removeSingleDisplayContent();
 	}
 
 	public void mouseEntered(MouseEvent e) {}
@@ -29,5 +28,4 @@ public class NumberButton extends JButton implements MouseListener {
 	public void mousePressed(MouseEvent e) {}
 
 	public void mouseReleased(MouseEvent e) {}
-	
 }
