@@ -3,10 +3,10 @@ package scientific_calculator;
 import java.awt.Color;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 
-import button.RemoveButton;
+import scientific_calculator.button.*;
 
-@SuppressWarnings("serial")
 public class Calculator extends JFrame{
 
 	private DisplayArea displayArea;
@@ -35,7 +35,6 @@ public class Calculator extends JFrame{
 	private OperateButton leftBracketButton;
 	private OperateButton rightBracketButton;
 	private OperateButton radixPointButton;
-	private OperateButton deleteButton;
 	private ClearButton clearButton;
 	private EqualButton equalButton;
 	private RemoveButton removeButton;
@@ -60,6 +59,7 @@ public class Calculator extends JFrame{
 		piButton = new NumberButton("π", displayArea);
 		napierButton = new NumberButton("e", displayArea);
 		clearButton = new ClearButton(displayArea);
+		
 		// new arithmeticUnit
 		arithmeticUnit = new ArithmeticUnit(displayArea);
 		equalButton = new EqualButton("=", arithmeticUnit);
@@ -93,7 +93,6 @@ public class Calculator extends JFrame{
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(600, 370);
 		setLocation(100, 100);
-		setBackground(Color.magenta);
 		setLayout(null);
 
 		// new and add DisplayArea.
@@ -164,16 +163,19 @@ public class Calculator extends JFrame{
 
 		nTimesPowerButton.setBounds(130, 220, 60, 60);
 		add(nTimesPowerButton);
-
-		squareRootButton.setBounds(10, 280, 60, 60);
-		add(squareRootButton);
-
-		cubeRootButton.setBounds(70, 280, 60, 60);
-		add(cubeRootButton);
-
-		nTimesRootButton.setBounds(130, 280, 60, 60);
-		add(nTimesRootButton);
-
+/*
+*		squareRootButton.setBounds(10, 280, 60, 60);
+*		add(squareRootButton);
+*
+*		cubeRootButton.setBounds(70, 280, 60, 60);
+*		add(cubeRootButton);
+*
+*		nTimesRootButton.setBounds(130, 280, 60, 60);
+*		add(nTimesRootButton);
+*/
+		JLabel signatureLabel = new JLabel("<html>"+"ScientificCalculator ver0.0.1"+"<br>"+"Created by B02 of Kumamoto-University." + "</html>");
+		signatureLabel.setBounds(10, 280,180,50);
+		add(signatureLabel);
 		leftBracketButton.setBounds(190, 100, 60, 60);
 		add(leftBracketButton);
 
@@ -187,5 +189,6 @@ public class Calculator extends JFrame{
 		add(removeButton);
 
 	}
+	
 
 }
