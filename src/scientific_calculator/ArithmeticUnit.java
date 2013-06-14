@@ -16,6 +16,7 @@ public class ArithmeticUnit{
 			ScriptEngineManager factory = new ScriptEngineManager();
 			ScriptEngine engine = factory.getEngineByName("JavaScript");
 			double result = (Double) engine.eval(getScript());
+			result = Double.valueOf((Double.toString(result).format("%.10f", result)));
 			displayArea.setText("" + result);
 			displayArea.finished();
 		}
@@ -131,37 +132,46 @@ public class ArithmeticUnit{
 			}
 		}
 		// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ n
+		// **********************************************************************************************
+		// Begin of n
+		// power******************************************************************************
+		// **********************************************************************************************
+		String scriptBefore = "";
+		String scriptAfter = "";
 		for (int i = 1; i < script.length(); i++){
 			if (script.substring(i, i + 1).equals("^") && script.substring(i - 1, i).equals(")")){
-				for (int j = i; j >= 0; j--){
+				for (int j = i - 2; j >=0; j--){
 					if (script.substring(j, j + 1).equals("(")){
-						script = script.substring(0, j) + "Math.pow" + script.substring(j, i - 1) + script.substring(i + 1);
-						if (script.substring(i, i + 1).equals("(")){
+						scriptBefore = script.substring(0, j) + "Math.pow" + script.substring(j, i - 1) + ",";
 
-						}
-						return script;
+						System.out.println("before = " + scriptBefore);
 					}
 				}
-			}else if (script.substring(i, i + 1).equals("^") && !script.substring(i - 1, i).equals(")")){
-				for (int j = i; j > 0; j--){
-					if (script.substring(j, j + 1).equals("+") || script.substring(j, j + 1).equals("/") || script.substring(j, j + 1).equals("*")
-							|| script.substring(j, j + 1).equals("-")){
-						script = script.substring(0, j + 1) + "Math.pow(" + script.substring(j + 1, i) + script.substring(i + 1);
-						break;
-					}
-					if (j == 1){
-						script = "Math.pow(" + script.substring(0, i) + ",3)" + script.substring(i + 1);
+				if (script.substring(i + 1, i + 2).equals("(")){
+					for (int p = i; p < script.length(); p++){
+						if (script.substring(p, p + 1).equals(")")){
+							scriptAfter = script.substring(i + 1, p + 1) + ")" + script.substring(p + 1);
+							System.out.println("after = " + scriptAfter);
+							script = scriptBefore + scriptAfter;
+							System.out.println("before and after = " + script);
+							return script;
+
+						}
 					}
 				}
 			}
 		}
+		// **********************************************************************************************
+		// End of n
+		// power******************************************************************************
+		// **********************************************************************************************
 
 		return script;
 	}
 
 	private String getFactorial(String script){
 		for (int i = 1; i < script.length(); i++){
-		System.out.println("にゃ");
+			System.out.println("にゃ");
 			if (script.substring(i, i + 1).equals("!") && script.substring(i - 1, i).equals(")")){
 				System.out.println("ん");
 				for (int j = i - 1; j >= 0; j--){
@@ -169,7 +179,7 @@ public class ArithmeticUnit{
 					if (script.substring(j, j + 1).equals("(")){
 						System.out.println("だよ");
 						int num = Integer.valueOf(script.substring(j + 1, i - 1));
-						script = script.substring(0, j)+fact(num)+script.substring(i+1);
+						script = script.substring(0, j) + fact(num) + script.substring(i + 1);
 						break;
 					}
 				}
@@ -182,7 +192,7 @@ public class ArithmeticUnit{
 
 	private String fact(int num){
 		double result = num;
-		if( num<0){
+		if (num < 0){
 			System.err.println("error");
 			return "error";
 		}
