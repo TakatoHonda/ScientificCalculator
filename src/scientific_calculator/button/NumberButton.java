@@ -3,6 +3,7 @@ package scientific_calculator.button;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 import scientific_calculator.DisplayArea;
@@ -14,12 +15,11 @@ public class NumberButton extends JButton implements MouseListener {
 	private DisplayArea displayArea;
 	
 	public NumberButton(String value, DisplayArea displayArea) {
-		setText(value);
 		this.value = value;
 		this.displayArea = displayArea;
 		addMouseListener(this);
 	}
-
+	
 	public void mouseClicked(MouseEvent e) {
 		displayArea.addDisplayContent(value);
 	}

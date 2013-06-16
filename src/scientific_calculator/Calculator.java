@@ -2,6 +2,7 @@ package scientific_calculator;
 
 import java.awt.Color;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
@@ -38,6 +39,40 @@ public class Calculator extends JFrame{
 	private ClearButton clearButton;
 	private EqualButton equalButton;
 	private RemoveButton removeButton;
+	
+	private ImageIcon numberButtonIcon0 = new ImageIcon("src/scientific_calculator/images/0ButtonIcon.gif");
+	private ImageIcon numberButtonIcon1 = new ImageIcon("src/scientific_calculator/images/1ButtonIcon.gif");
+	private ImageIcon numberButtonIcon2 = new ImageIcon("src/scientific_calculator/images/2ButtonIcon.gif");
+	private ImageIcon numberButtonIcon3 = new ImageIcon("src/scientific_calculator/images/3ButtonIcon.gif");
+	private ImageIcon numberButtonIcon4 = new ImageIcon("src/scientific_calculator/images/4ButtonIcon.gif");
+	private ImageIcon numberButtonIcon5 = new ImageIcon("src/scientific_calculator/images/5ButtonIcon.gif");
+	private ImageIcon numberButtonIcon6 = new ImageIcon("src/scientific_calculator/images/6ButtonIcon.gif");
+	private ImageIcon numberButtonIcon7 = new ImageIcon("src/scientific_calculator/images/7ButtonIcon.gif");
+	private ImageIcon numberButtonIcon8 = new ImageIcon("src/scientific_calculator/images/8ButtonIcon.gif");
+	private ImageIcon numberButtonIcon9 = new ImageIcon("src/scientific_calculator/images/9ButtonIcon.gif");
+	private ImageIcon piButtonIcon = new ImageIcon("src/scientific_calculator/images/piButtonIcon.gif");
+	private ImageIcon eButtonIcon = new ImageIcon("src/scientific_calculator/images/eButtonIcon.gif");
+	private ImageIcon radixPointButtonIcon = new ImageIcon("src/scientific_calculator/images/dotButtonIcon.gif");
+	private ImageIcon[] numberButtonIcons = {numberButtonIcon0,numberButtonIcon1,numberButtonIcon2,numberButtonIcon3,numberButtonIcon4,numberButtonIcon5,numberButtonIcon6,numberButtonIcon7,numberButtonIcon8,numberButtonIcon9};
+	private ImageIcon cosButtonIcon = new ImageIcon("src/scientific_calculator/images/cosButtonIcon.gif");
+	private ImageIcon sinButtonIcon = new ImageIcon("src/scientific_calculator/images/sinButtonIcon.gif");
+	private ImageIcon tanButtonIcon = new ImageIcon("src/scientific_calculator/images/tanButtonIcon.gif");
+	private ImageIcon plusButtonIcon = new ImageIcon("src/scientific_calculator/images/plusButtonIcon.gif");
+	private ImageIcon minusButtonIcon = new ImageIcon("src/scientific_calculator/images/minusButtonIcon.gif");
+	private ImageIcon divideButtonIcon = new ImageIcon("src/scientific_calculator/images/divideButtonIcon.gif");
+	private ImageIcon multiButtonIcon = new ImageIcon("src/scientific_calculator/images/multiButtonIcon.gif");
+	private ImageIcon deleteButtonIcon = new ImageIcon("src/scientific_calculator/images/deleteButtonIcon.gif");
+	private ImageIcon equalButtonIcon = new ImageIcon("src/scientific_calculator/images/equalButtonIcon.gif");
+	private ImageIcon clearButtonIcon = new ImageIcon("src/scientific_calculator/images/clearButtonIcon.gif");
+	private ImageIcon leftBracketButtonIcon = new ImageIcon("src/scientific_calculator/images/leftBracketButtonIcon.gif");
+	private ImageIcon rightBracketButtonIcon = new ImageIcon("src/scientific_calculator/images/rightBracketButtonIcon.gif");
+	private ImageIcon lnButtonIcon = new ImageIcon("src/scientific_calculator/images/lnButtonIcon.gif");
+	private ImageIcon logButtonIcon = new ImageIcon("src/scientific_calculator/images/logButtonIcon.gif");
+	private ImageIcon factorialButtonIcon = new ImageIcon("src/scientific_calculator/images/factorialButtonIcon.gif");
+	private ImageIcon squareButtonIcon = new ImageIcon("src/scientific_calculator/images/squareButtonIcon.gif");
+	private ImageIcon cubeButtonIcon = new ImageIcon("src/scientific_calculator/images/cubeButtonIcon.gif");
+	private ImageIcon nTimesPowerButtonIcon = new ImageIcon("src/scientific_calculator/images/nTimesPowerButtonIcon.gif");
+	private ImageIcon hogeButtonIcon = new ImageIcon("src/scientific_calculator/images/hoge.gif");
 
 	public static void main(String[] args){
 		Calculator calculator = new Calculator();
@@ -48,14 +83,15 @@ public class Calculator extends JFrame{
 		initFields();
 		initGUI();
 	}
-
 	public void initFields(){
 		displayArea = new DisplayArea();
 		numberButton = new NumberButton[10];
 		for (int i = 0; i < 10; i++){
 			numberButton[i] = new NumberButton(""+i, displayArea);
+			numberButton[i].setIcon(numberButtonIcons[i]);
 			add(numberButton[i]);
 		}
+		
 		piButton = new NumberButton("π", displayArea);
 		napierButton = new NumberButton("e", displayArea);
 		clearButton = new ClearButton(displayArea);
@@ -112,56 +148,73 @@ public class Calculator extends JFrame{
 
 		// new and add NumberButtons. pi and e
 		piButton.setBounds(190, 220, 60, 60);
+		piButton.setIcon(piButtonIcon);
 		add(piButton);
 		napierButton.setBounds(190, 280, 60, 60);
+		napierButton.setIcon(eButtonIcon);
 		add(napierButton);
 
 		// new and add ClearButton.
 		clearButton.setBounds(530, 160, 60, 60);
+		clearButton.setIcon(clearButtonIcon);
 		add(clearButton);
 
 		// new and add EqualButton.
 		equalButton.setBounds(530, 220, 60, 120);
+		equalButton.setIcon(equalButtonIcon);
 		add(equalButton);
 
 		// new and add OperateButtons.
 		plusButton.setBounds(250, 100, 60, 60);
+		plusButton.setIcon(plusButtonIcon);
 		add(plusButton);
 
 		minusButton.setBounds(250, 160, 60, 60);
+		minusButton.setIcon(minusButtonIcon);
 		add(minusButton);
 
 		multiplyButton.setBounds(250, 220, 60, 60);
+		multiplyButton.setIcon(multiButtonIcon);
 		add(multiplyButton);
 
 		divideButton.setBounds(250, 280, 60, 60);
+		divideButton.setIcon(divideButtonIcon);
 		add(divideButton);
 
 		factorialButton.setBounds(130, 100, 60, 60);
+		factorialButton.setIcon(factorialButtonIcon);
 		add(factorialButton);
 
 		logarithmsButton.setBounds(70, 100, 60, 60);
+		logarithmsButton.setIcon(logButtonIcon);
 		add(logarithmsButton);
 
 		logarithmsNaturalButton.setBounds(10, 100, 60, 60);
+		logarithmsNaturalButton.setIcon(lnButtonIcon);
 		add(logarithmsNaturalButton);
 
 		sinButton.setBounds(10, 160, 60, 60);
+		sinButton.setIcon(sinButtonIcon);
 		add(sinButton);
 
 		cosButton.setBounds(70, 160, 60, 60);
+		cosButton.setIcon(cosButtonIcon);
 		add(cosButton);
 
 		tanButton.setBounds(130, 160, 60, 60);
+		tanButton.setIcon(tanButtonIcon);
 		add(tanButton);
 
 		squareButton.setBounds(10, 220, 60, 60);
+		squareButton.setIcon(hogeButtonIcon);
 		add(squareButton);
 
 		cubeButton.setBounds(70, 220, 60, 60);
+		cubeButton.setIcon(hogeButtonIcon);
 		add(cubeButton);
 
 		nTimesPowerButton.setBounds(130, 220, 60, 60);
+		nTimesPowerButton.setIcon(nTimesPowerButtonIcon);
 		add(nTimesPowerButton);
 /*
 *		squareRootButton.setBounds(10, 280, 60, 60);
@@ -177,15 +230,19 @@ public class Calculator extends JFrame{
 		signatureLabel.setBounds(10, 280,180,50);
 		add(signatureLabel);
 		leftBracketButton.setBounds(190, 100, 60, 60);
+		leftBracketButton.setIcon(leftBracketButtonIcon);
 		add(leftBracketButton);
 
 		rightBracketButton.setBounds(190, 160, 60, 60);
+		rightBracketButton.setIcon(rightBracketButtonIcon);
 		add(rightBracketButton);
 
 		radixPointButton.setBounds(470, 280, 60, 60);
+		radixPointButton.setIcon(radixPointButtonIcon);
 		add(radixPointButton);
 
 		removeButton.setBounds(530, 100, 60, 60);
+		removeButton.setIcon(deleteButtonIcon);
 		add(removeButton);
 
 	}

@@ -11,7 +11,6 @@ import scientific_calculator.DisplayArea;
 public class ClearButton extends JButton implements MouseListener {
 	private DisplayArea displayArea;
 	public ClearButton(DisplayArea displayArea) {
-		super("C");
 		this.displayArea = displayArea;
 		addMouseListener(this);
 	}

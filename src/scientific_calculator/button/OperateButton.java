@@ -12,8 +12,6 @@ public class OperateButton extends JButton implements MouseListener {
 	private DisplayArea displayArea;
 	final String operator;
 	public OperateButton(String operator, DisplayArea displayArea) {
-		super(operator);
-		setOpaque(true);
 		this.displayArea = displayArea;
 		this.operator=setOperator(operator);
 		addMouseListener(this);

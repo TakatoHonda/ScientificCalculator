@@ -10,7 +10,6 @@ import scientific_calculator.DisplayArea;
 public class RemoveButton extends JButton implements MouseListener{
 	private DisplayArea displayArea;
 	public RemoveButton(DisplayArea displayArea){
-		setText("Å©");
 		//setOpaque(false);
 		this.displayArea = displayArea;
 		addMouseListener(this);

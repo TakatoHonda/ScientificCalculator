@@ -14,7 +14,6 @@ import scientific_calculator.ArithmeticUnit;
 public class EqualButton extends JButton implements MouseListener{
 	ArithmeticUnit arithmeticUnit;
 	public EqualButton(String display, ArithmeticUnit arithmeticUnit) {
-		super(display);
 		this.arithmeticUnit =arithmeticUnit;
 		addMouseListener(this);
 	}
