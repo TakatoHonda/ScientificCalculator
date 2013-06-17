@@ -206,11 +206,11 @@ public class Calculator extends JFrame{
 		add(tanButton);
 
 		squareButton.setBounds(10, 220, 60, 60);
-		squareButton.setIcon(hogeButtonIcon);
+		squareButton.setIcon(squareButtonIcon);
 		add(squareButton);
 
 		cubeButton.setBounds(70, 220, 60, 60);
-		cubeButton.setIcon(hogeButtonIcon);
+		cubeButton.setIcon(cubeButtonIcon);
 		add(cubeButton);
 
 		nTimesPowerButton.setBounds(130, 220, 60, 60);
