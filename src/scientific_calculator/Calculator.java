@@ -39,6 +39,9 @@ public class Calculator extends JFrame{
 	private ClearButton clearButton;
 	private EqualButton equalButton;
 	private RemoveButton removeButton;
+	private BinaryButton binaryButton;
+	private OctalButton octalButton;
+	private HexButton hexButton;
 	
 	private ImageIcon numberButtonIcon0 = new ImageIcon("src/scientific_calculator/images/0ButtonIcon.gif");
 	private ImageIcon numberButtonIcon1 = new ImageIcon("src/scientific_calculator/images/1ButtonIcon.gif");
@@ -73,7 +76,10 @@ public class Calculator extends JFrame{
 	private ImageIcon cubeButtonIcon = new ImageIcon("src/scientific_calculator/images/cubeButtonIcon.gif");
 	private ImageIcon nTimesPowerButtonIcon = new ImageIcon("src/scientific_calculator/images/nTimesPowerButtonIcon.gif");
 	private ImageIcon hogeButtonIcon = new ImageIcon("src/scientific_calculator/images/hoge.gif");
-
+	private ImageIcon binaryButtonIcon = new ImageIcon("src/scientific_calculator/images/binaryButtonIcon.gif");
+	private ImageIcon octalButtonIcon = new ImageIcon("src/scientific_calculator/images/octalButtonIcon.gif");
+	private ImageIcon hexButtonIcon = new ImageIcon("src/scientific_calculator/images/hexButtonIcon.gif");
+	
 	public static void main(String[] args){
 		Calculator calculator = new Calculator();
 		calculator.setVisible(true);
@@ -122,6 +128,9 @@ public class Calculator extends JFrame{
 		radixPointButton = new OperateButton(".", displayArea);
 		removeButton = new RemoveButton(displayArea);
 		
+		binaryButton = new BinaryButton("2",displayArea);
+		octalButton = new OctalButton("8",displayArea);
+		hexButton = new HexButton("16",displayArea);
 	}
 
 	public void initGUI(){
@@ -216,16 +225,19 @@ public class Calculator extends JFrame{
 		nTimesPowerButton.setBounds(130, 220, 60, 60);
 		nTimesPowerButton.setIcon(nTimesPowerButtonIcon);
 		add(nTimesPowerButton);
-/*
-*		squareRootButton.setBounds(10, 280, 60, 60);
-*		add(squareRootButton);
-*
-*		cubeRootButton.setBounds(70, 280, 60, 60);
-*		add(cubeRootButton);
-*
-*		nTimesRootButton.setBounds(130, 280, 60, 60);
-*		add(nTimesRootButton);
-*/
+
+		binaryButton.setBounds(10, 280, 60, 60);
+		binaryButton.setIcon(binaryButtonIcon);
+		add(binaryButton);
+
+		octalButton.setBounds(70, 280, 60, 60);
+		octalButton.setIcon(octalButtonIcon);
+		add(octalButton);
+
+		hexButton.setBounds(130, 280, 60, 60);
+		hexButton.setIcon(hexButtonIcon);
+		add(hexButton);
+
 		JLabel signatureLabel = new JLabel("<html>"+"ScientificCalculator ver0.0.1"+"<br>"+"Created by B02 of Kumamoto-University." + "</html>");
 		signatureLabel.setBounds(10, 280,180,50);
 		add(signatureLabel);
