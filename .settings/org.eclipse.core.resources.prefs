@@ -1,4 +1,6 @@
 eclipse.preferences.version=1
 encoding//src/scientific_calculator/ArithmeticUnit.java=UTF-8
 encoding//src/scientific_calculator/Calculator.java=UTF-8
+encoding//src/scientific_calculator/button/BinaryButton.java=UTF-8
+encoding//src/scientific_calculator/button/OctalButton.java=UTF-8
 encoding//src/scientific_calculator/button/OperateButton.java=UTF-8

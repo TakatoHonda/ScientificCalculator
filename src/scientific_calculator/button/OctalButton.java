@@ -19,7 +19,7 @@ public class OctalButton extends JButton implements MouseListener{
 		System.out.println("OctalButton!");
 		displayArea.setText("("+Integer.toOctalString(Integer.parseInt(displayArea.getText()))+")₈");
 		}catch(Exception e1){
-			System.out.println("double型は8進数に変換できません");
+			System.out.println("double型は変換できません");
 			displayArea.setText("error");
 		}
 		}

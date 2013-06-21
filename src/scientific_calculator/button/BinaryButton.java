@@ -19,7 +19,7 @@ public class BinaryButton extends JButton implements MouseListener{
 		System.out.println("BinaryButton!");
 		displayArea.setText("("+Integer.toBinaryString(Integer.parseInt(displayArea.getText()))+")₂");
 		}catch(Exception e1){
-			System.out.println("double型は2進数に変換できません");
+			System.out.println("double型は変換できません");
 			displayArea.setText("error");
 		}
 		}
