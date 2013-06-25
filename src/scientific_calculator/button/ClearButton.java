@@ -2,6 +2,7 @@ package scientific_calculator.button;
 
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.IOException;
 
 import javax.swing.JButton;
 
@@ -17,6 +18,13 @@ public class ClearButton extends JButton implements MouseListener {
 	
 	public void mouseClicked(MouseEvent e) {
 		displayArea.clear();
+		Runtime r = Runtime.getRuntime();
+		try{
+			r.exec("say " + "くりあーでしゅう！");
+		}
+		catch (IOException e1){
+			e1.printStackTrace();
+		}
 	}
 	
 	public void mouseEntered(MouseEvent e) {}
