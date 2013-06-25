@@ -1,5 +1,7 @@
 package scientific_calculator;
 
+import java.io.IOException;
+
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -18,6 +20,13 @@ public class ArithmeticUnit{
 			double result = (Double) engine.eval(getScript());
 			result = Double.valueOf((Double.toString(result).format("%.10f", result)));
 			displayArea.setText("" + result);
+			Runtime r = Runtime.getRuntime();
+			try{
+				r.exec("say " + result);
+			}
+			catch (IOException e){
+				e.printStackTrace();
+			}
 			displayArea.finished();
 		}
 		catch (ScriptException e1){
