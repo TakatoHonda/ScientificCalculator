@@ -16,12 +16,11 @@ public class DisplayArea extends JTextArea{
 		setBackground(Color.white);
 		setText("");
 		setRows(1);
-		Font font = new Font("Dialog", Font.PLAIN, 60);
+		Font font = new Font("Dialog", Font.PLAIN, 45);
 		setFont(font);
 	}
 
 	public void addDisplayContent(String displayContent){
-		if (getText().length() < 15){
 			if (finishedFlag == true){
 				this.displayContent = displayContent;
 				finishedFlag = false;
@@ -29,7 +28,6 @@ public class DisplayArea extends JTextArea{
 				this.displayContent = getText() + displayContent;
 			}
 			setText(this.displayContent);
-		}
 	}
 
 	public void removeSingleDisplayContent(){

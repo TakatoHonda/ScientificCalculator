@@ -1,7 +1,5 @@
 package scientific_calculator;
 
-import java.awt.Color;
-
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -18,7 +16,7 @@ public class Calculator extends JFrame{
 	private NumberButton napierButton;
 
 	private OperateButton plusButton;
-	private OperateButton squareRootButton;
+	//private OperateButton squareRootButton;
 	private OperateButton minusButton;
 	private OperateButton multiplyButton;
 	private OperateButton divideButton;
@@ -31,8 +29,8 @@ public class Calculator extends JFrame{
 	private OperateButton squareButton;
 	private OperateButton cubeButton;
 	private OperateButton nTimesPowerButton;
-	private OperateButton cubeRootButton;
-	private OperateButton nTimesRootButton;
+	//private OperateButton cubeRootButton;
+	//private OperateButton nTimesRootButton;
 	private OperateButton leftBracketButton;
 	private OperateButton rightBracketButton;
 	private OperateButton radixPointButton;
@@ -89,6 +87,7 @@ public class Calculator extends JFrame{
 		initFields();
 		initGUI();
 	}
+	
 	public void initFields(){
 		displayArea = new DisplayArea();
 		numberButton = new NumberButton[10];
@@ -120,9 +119,9 @@ public class Calculator extends JFrame{
 		squareButton = new OperateButton("x²", displayArea);
 		cubeButton = new OperateButton("x³", displayArea);
 		nTimesPowerButton = new OperateButton("xⁿ", displayArea);
-		squareRootButton = new OperateButton("²√x", displayArea);
-		cubeRootButton = new OperateButton("³√x", displayArea);
-		nTimesRootButton = new OperateButton("ⁿ√x", displayArea);
+		//squareRootButton = new OperateButton("²√x", displayArea);
+		//cubeRootButton = new OperateButton("³√x", displayArea);
+		//nTimesRootButton = new OperateButton("ⁿ√x", displayArea);
 		leftBracketButton = new OperateButton("(", displayArea);
 		rightBracketButton = new OperateButton(")", displayArea);
 		radixPointButton = new OperateButton(".", displayArea);
@@ -238,9 +237,9 @@ public class Calculator extends JFrame{
 		hexButton.setIcon(hexButtonIcon);
 		add(hexButton);
 
-		JLabel signatureLabel = new JLabel("<html>"+"ScientificCalculator ver0.0.1"+"<br>"+"Created by B02 of Kumamoto-University." + "</html>");
+		/*JLabel signatureLabel = new JLabel("<html>"+"ScientificCalculator ver0.0.1"+"<br>"+"Created by B02 of Kumamoto-University." + "</html>");
 		signatureLabel.setBounds(10, 280,180,50);
-		add(signatureLabel);
+		add(signatureLabel);*/
 		leftBracketButton.setBounds(190, 100, 60, 60);
 		leftBracketButton.setIcon(leftBracketButtonIcon);
 		add(leftBracketButton);
