@@ -2,8 +2,6 @@ package scientific_calculator;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-
 import scientific_calculator.button.*;
 
 public class Calculator extends JFrame{
@@ -15,24 +13,11 @@ public class Calculator extends JFrame{
 	private NumberButton piButton;
 	private NumberButton napierButton;
 
-	private OperateButton plusButton;
-	//private OperateButton squareRootButton;
-	private OperateButton minusButton;
-	private OperateButton multiplyButton;
-	private OperateButton divideButton;
-	private OperateButton factorialButton;
-	private OperateButton logarithmsButton;
-	private OperateButton logarithmsNaturalButton;
-	private OperateButton sinButton;
-	private OperateButton cosButton;
-	private OperateButton tanButton;
-	private OperateButton squareButton;
-	private OperateButton cubeButton;
-	private OperateButton nTimesPowerButton;
-	//private OperateButton cubeRootButton;
-	//private OperateButton nTimesRootButton;
-	private OperateButton leftBracketButton;
-	private OperateButton rightBracketButton;
+	private OperateButton plusButton,minusButton,multiplyButton,divideButton;
+	private OperateButton factorialButton,logarithmsButton,logarithmsNaturalButton;
+	private OperateButton sinButton,cosButton,tanButton;
+	private OperateButton squareButton,cubeButton,nTimesPowerButton;
+	private OperateButton leftBracketButton,rightBracketButton;
 	private OperateButton radixPointButton;
 	private ClearButton clearButton;
 	private EqualButton equalButton;
@@ -73,7 +58,6 @@ public class Calculator extends JFrame{
 	private ImageIcon squareButtonIcon = new ImageIcon("src/scientific_calculator/images/squareButtonIcon.gif");
 	private ImageIcon cubeButtonIcon = new ImageIcon("src/scientific_calculator/images/cubeButtonIcon.gif");
 	private ImageIcon nTimesPowerButtonIcon = new ImageIcon("src/scientific_calculator/images/nTimesPowerButtonIcon.gif");
-	private ImageIcon hogeButtonIcon = new ImageIcon("src/scientific_calculator/images/hoge.gif");
 	private ImageIcon binaryButtonIcon = new ImageIcon("src/scientific_calculator/images/binaryButtonIcon.gif");
 	private ImageIcon octalButtonIcon = new ImageIcon("src/scientific_calculator/images/octalButtonIcon.gif");
 	private ImageIcon hexButtonIcon = new ImageIcon("src/scientific_calculator/images/hexButtonIcon.gif");
@@ -96,7 +80,6 @@ public class Calculator extends JFrame{
 			numberButton[i].setIcon(numberButtonIcons[i]);
 			add(numberButton[i]);
 		}
-		
 		piButton = new NumberButton("π", displayArea);
 		napierButton = new NumberButton("e", displayArea);
 		clearButton = new ClearButton(displayArea);
@@ -119,9 +102,6 @@ public class Calculator extends JFrame{
 		squareButton = new OperateButton("x²", displayArea);
 		cubeButton = new OperateButton("x³", displayArea);
 		nTimesPowerButton = new OperateButton("xⁿ", displayArea);
-		//squareRootButton = new OperateButton("²√x", displayArea);
-		//cubeRootButton = new OperateButton("³√x", displayArea);
-		//nTimesRootButton = new OperateButton("ⁿ√x", displayArea);
 		leftBracketButton = new OperateButton("(", displayArea);
 		rightBracketButton = new OperateButton(")", displayArea);
 		radixPointButton = new OperateButton(".", displayArea);
@@ -237,9 +217,6 @@ public class Calculator extends JFrame{
 		hexButton.setIcon(hexButtonIcon);
 		add(hexButton);
 
-		/*JLabel signatureLabel = new JLabel("<html>"+"ScientificCalculator ver0.0.1"+"<br>"+"Created by B02 of Kumamoto-University." + "</html>");
-		signatureLabel.setBounds(10, 280,180,50);
-		add(signatureLabel);*/
 		leftBracketButton.setBounds(190, 100, 60, 60);
 		leftBracketButton.setIcon(leftBracketButtonIcon);
 		add(leftBracketButton);
